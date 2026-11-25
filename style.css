@@ -1,0 +1,762 @@
+
+
+:root {
+    --yellow: #ffca28;
+    --ink: #17191f;
+    --soft: #f4f6f9;
+    --blue: #244f8c;
+}
+
+/* Global reset and horizontal scrollbar removal */
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    color: var(--ink);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* HEADER */
+.site-header {
+    background: #fff;
+    min-height: 92px;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.site-nav {
+    width: 100%;
+    padding: 10px 4%;
+    display: flex;
+    justify-content: space-between;
+    gap: 28px;
+}
+
+.brand-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffca05;
+    color: #050505;
+    border-radius: 60px;
+    font-weight: 900;
+    font-size: 34px;
+    letter-spacing: -2px;
+    line-height: 1;
+    padding: 15px 28px 17px;
+    text-decoration: none;
+    font-style: italic;
+    white-space: nowrap;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: clamp(18px, 2.8vw, 48px);
+}
+
+.nav-links a {
+    color: #333;
+    text-decoration: none;
+    font-size: 17px;
+    white-space: nowrap;
+    padding: 12px 0;
+}
+
+.nav-links .active {
+    color: #111;
+    border-bottom: 2px solid #111;
+    font-weight: 600;
+}
+
+.nav-links .download-btn {
+    color: #fff;
+    background: #050505;
+    padding: 16px 30px;
+    border-radius: 40px 40px 0 40px;
+    font-weight: 700;
+    font-size: 19px;
+}
+
+/* HERO SECTION */
+.hero-section {
+    background: #f3f5fa;
+    padding: 80px 4% 78px;
+    width: 100%;
+}
+
+.hero-inner {
+    max-width: 1600px;
+    margin: auto;
+    width: 100%;
+}
+
+.hero-copy h1 {
+    font-size: clamp(42px, 4vw, 62px);
+    line-height: 1.22;
+    font-weight: 800;
+    margin: 0 0 18px;
+    letter-spacing: -0.8px;
+}
+
+.hero-subtitle {
+    font-size: clamp(20px, 1.7vw, 25px);
+    margin: 0 0 38px;
+}
+
+.ride-form {
+    max-width: 710px;
+    width: 100%;
+    display: grid;
+    gap: 20px;
+}
+
+.location-field {
+    height: 72px;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    background: #fff;
+    border: 1px solid #cbd1dc;
+    border-radius: 8px;
+    padding: 0 26px;
+    width: 100%;
+    min-width: 0;
+}
+
+.location-field input {
+    width: 100%;
+    min-width: 0;
+    border: 0;
+    outline: 0;
+    font-size: 20px;
+    color: #333;
+    background: transparent;
+}
+
+.location-field input::placeholder {
+    color: #526071;
+    opacity: 1;
+}
+
+.pin-icon,
+.target-icon {
+    width: 17px;
+    height: 22px;
+    background: #1c2430;
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    flex: 0 0 auto;
+    position: relative;
+}
+
+.pin-icon:after,
+.target-icon:after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: white;
+    top: 6px;
+    left: 6px;
+}
+
+.target-icon {
+    width: 21px;
+    height: 21px;
+    border-radius: 50%;
+    transform: none;
+}
+
+.target-icon:after {
+    width: 8px;
+    height: 8px;
+    top: 6.5px;
+    left: 6.5px;
+}
+
+.book-ride {
+    display: block;
+    margin-top: 20px;
+    background: var(--yellow);
+    color: #080808;
+    text-align: center;
+    padding: 22px;
+    border-radius: 8px;
+    font-size: 25px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.hero-art-wrap {
+    display: flex;
+    justify-content: flex-end;
+    min-width: 0;
+}
+
+.hero-art {
+    width: 100%;
+    max-width: 720px;
+    height: 490px;
+    object-fit: cover;
+    border-radius: 180px 12px 12px 180px;
+}
+
+/* COMMON SECTIONS */
+.section-pad {
+    padding: 58px 0 55px;
+}
+
+.section-heading {
+    font-size: clamp(32px, 3vw, 46px);
+    font-weight: 750;
+    margin: 0 0 12px;
+}
+
+.yellow-rule {
+    width: 120px;
+    height: 5px;
+    border-radius: 10px;
+    background: var(--yellow);
+    margin-bottom: 68px;
+}
+
+/* SERVICES */
+.services-section .container {
+    max-width: 1510px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 55px;
+    padding: 0 12px;
+    width: 100%;
+}
+
+.service-card {
+    min-height: 184px;
+    border-radius: 15px;
+    background: #f4f6f8;
+    padding: 28px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    overflow: hidden;
+    min-width: 0;
+}
+
+.service-card h3 {
+    font-size: 27px;
+    font-weight: 700;
+    margin: 0 0 8px;
+    color: #111827;
+}
+
+.service-card p {
+    font-size: 18px;
+    line-height: 1.35;
+    color: #687386;
+    margin: 0;
+}
+
+.service-card img {
+    width: 42%;
+    height: 125px;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+}
+
+/* FEATURES */
+.features-section {
+    background: #f7f9fc;
+    padding: 34px 0 45px;
+    width: 100%;
+}
+
+.features-container {
+    padding: 0 1.7%;
+    width: 100%;
+}
+
+.features-section .yellow-rule {
+    margin-bottom: 50px;
+}
+
+.feature-row {
+    --bs-gutter-x: 5rem;
+}
+
+.feature-card img {
+    width: 100%;
+    height: 418px;
+    object-fit: cover;
+    border-radius: 18px;
+    display: block;
+    margin-bottom: 23px;
+}
+
+.feature-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #080808;
+}
+
+.feature-card p {
+    font-size: 18px;
+    line-height: 1.55;
+    margin: 0;
+    color: #17191f;
+}
+
+/* EARN SECTION */
+.earn-section {
+    background: var(--blue);
+    color: #fff;
+    padding: 95px 4.4% 0;
+    overflow: hidden;
+    width: 100%;
+}
+
+.earn-image {
+    width: 100%;
+    height: 595px;
+    object-fit: cover;
+    border-radius: 24px 24px 0 0;
+    display: block;
+}
+
+.earn-copy {
+    padding: 0 3% 75px 0;
+}
+
+.earn-copy h2 {
+    font-size: clamp(38px, 3.3vw, 48px);
+    font-weight: 750;
+    line-height: 1.2;
+    margin: 0 0 18px;
+}
+
+.earn-copy .yellow-rule {
+    margin-bottom: 42px;
+}
+
+.earn-copy p {
+    font-size: clamp(23px, 2vw, 31px);
+    line-height: 1.55;
+    color: #f3f5fa;
+    margin-bottom: 42px;
+}
+
+.start-earning {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    background: var(--yellow);
+    color: #080808;
+    border-radius: 40px;
+    padding: 14px 22px;
+    font-size: 27px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* DOWNLOAD SECTION */
+.download-section {
+    background: #f5f5f5;
+    padding: 18px 3% 88px;
+    width: 100%;
+}
+
+.download-section .section-heading {
+    margin-bottom: 14px;
+}
+
+.download-section .yellow-rule {
+    margin-bottom: 118px;
+}
+
+.download-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4%;
+    width: 100%;
+}
+
+.download-card {
+    min-height: 255px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 30px;
+    background: #fff;
+    border-radius: 20px;
+    color: #050505;
+    text-decoration: none;
+    font-size: clamp(27px, 2.4vw, 39px);
+    line-height: 1.3;
+    min-width: 0;
+}
+
+.large-logo {
+    font-size: clamp(35px, 4vw, 62px);
+    padding: 25px 38px;
+    letter-spacing: -3px;
+}
+
+.captain-logo {
+    position: relative;
+    padding-bottom: 29px;
+}
+
+.captain-logo small {
+    position: absolute;
+    font-size: 22px;
+    letter-spacing: -1px;
+    right: 25px;
+    bottom: 8px;
+    font-style: normal;
+}
+
+/* FOOTER */
+.site-footer {
+    background: #050505;
+    color: #fff;
+    padding: 75px 4.6% 85px;
+    width: 100%;
+}
+
+.app-downloads {
+    display: flex;
+    gap: 40px;
+}
+
+.store-column h3,
+.social-links h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 32px;
+}
+
+.store-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 184px;
+    min-height: 54px;
+    border: 1px solid #8b8b8b;
+    border-radius: 7px;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 28px;
+    padding: 5px 10px;
+}
+
+.store-badge b {
+    font-size: 28px;
+    color: #68d4b0;
+}
+
+.store-badge span {
+    font-size: 18px;
+    line-height: 1.05;
+    font-weight: 600;
+}
+
+.store-badge small {
+    display: block;
+    font-size: 9px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+.store-badge.apple b {
+    color: #fff;
+    font-size: 29px;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.footer-links a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 17px;
+    line-height: 1.25;
+}
+
+.social-icons {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.social-icons a:first-child {
+    background: white;
+    color: black;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+
+.social-icons a:nth-child(3) {
+    border: 2px solid white;
+    border-radius: 3px;
+    width: 29px;
+    height: 28px;
+    font-size: 16px;
+}
+
+/* TABLET RESPONSIVE */
+@media (max-width: 1100px) {
+
+    .site-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px 25px;
+    }
+
+    .hero-section {
+        padding-top: 55px;
+    }
+
+    .hero-art {
+        height: 400px;
+    }
+
+    .services-grid {
+        gap: 25px;
+    }
+
+    .feature-row {
+        --bs-gutter-x: 1.5rem;
+    }
+
+    .feature-card img {
+        height: 320px;
+    }
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 767px) {
+
+    .site-header {
+        padding: 10px 0;
+    }
+
+    .brand-logo {
+        font-size: 29px;
+        padding: 12px 24px;
+    }
+
+    .nav-links {
+        gap: 4px 16px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+        padding: 7px 0;
+    }
+
+    .nav-links .download-btn {
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+
+    .hero-section {
+        padding: 42px 5% 48px;
+    }
+
+    .hero-copy h1 {
+        font-size: 42px;
+    }
+
+    .hero-subtitle {
+        font-size: 19px;
+        margin-bottom: 25px;
+    }
+
+    .location-field {
+        height: 60px;
+        padding: 0 16px;
+        gap: 15px;
+    }
+
+    .location-field input {
+        font-size: 16px;
+    }
+
+    .book-ride {
+        font-size: 20px;
+        padding: 16px;
+        margin-top: 5px;
+    }
+
+    .hero-art {
+        height: 280px;
+        border-radius: 100px 10px 10px 100px;
+    }
+
+    .section-pad {
+        padding: 42px 0;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding: 0;
+    }
+
+    .service-card {
+        min-height: 145px;
+    }
+
+    .service-card h3 {
+        font-size: 23px;
+    }
+
+    .service-card p {
+        font-size: 16px;
+    }
+
+    .service-card img {
+        height: 105px;
+    }
+
+    .features-container {
+        padding: 0 5%;
+    }
+
+    .features-section .yellow-rule {
+        margin-bottom: 32px;
+    }
+
+    .feature-card {
+        margin-bottom: 25px;
+    }
+
+    .feature-card img {
+        height: auto;
+        aspect-ratio: 1.08;
+    }
+
+    .feature-card h3 {
+        margin-bottom: 12px;
+    }
+
+    .feature-card p {
+        font-size: 16px;
+    }
+
+    .earn-section {
+        padding: 45px 5% 0;
+    }
+
+    .earn-image {
+        height: auto;
+        max-height: 360px;
+        border-radius: 18px;
+    }
+
+    .earn-copy {
+        padding: 10px 0 50px;
+    }
+
+    .earn-copy p {
+        font-size: 21px;
+    }
+
+    .start-earning {
+        font-size: 21px;
+    }
+
+    .download-section {
+        padding: 38px 5% 55px;
+    }
+
+    .download-section .yellow-rule {
+        margin-bottom: 35px;
+    }
+
+    .download-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .download-card {
+        min-height: 160px;
+        justify-content: flex-start;
+        font-size: 25px;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .large-logo {
+        font-size: 34px;
+        padding: 18px 24px;
+    }
+
+    .captain-logo small {
+        font-size: 14px;
+        right: 15px;
+        bottom: 5px;
+    }
+
+    .site-footer {
+        padding: 48px 6%;
+    }
+
+    .app-downloads {
+        flex-wrap: wrap;
+        gap: 25px;
+    }
+
+    .footer-links {
+        gap: 12px;
+    }
+
+    .social-links {
+        margin-top: 10px;
+    }
+}
